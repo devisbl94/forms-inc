@@ -88,7 +88,7 @@
 						username.style.background = '#FFF';
 					}
 					// Verificar estructura
-					if (!username.value.match("^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$")) {
+					if (!isEmail(username.value)) {
 						username.style.background = '#FFFFCC';
 						alert("Correo no válido");
 						error = 1;
@@ -176,9 +176,9 @@
 
 				// Verifica si hay errores
 				if (error != 0) {
+					event.preventDefault();
 					mensajes.innerHTML = showMessage("warning", "Por favor, verifique sus datos");
 					msgclose.focus();
-					event.preventDefault();
 				}
 
 			});
@@ -231,7 +231,7 @@
 						concorreo.style.background = '#FFF';
 					}
 					// Verificar estructura
-					if (!concorreo.value.match("^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$")) {
+					if (!isEmail(concorreo.value)) {
 						concorreo.style.background = '#FFFFCC';
 						alert("Correo no válido");
 						error = 1;
@@ -260,9 +260,9 @@
 
 				// Verifica si hay errores
 					if (error != 0) {
+						event.preventDefault();
 						conmensajes.innerHTML = showMessage("warning", "Por favor, verifique sus datos");
 						msgclose.focus();
-						event.preventDefault();
 					}
 
 			});
@@ -299,7 +299,7 @@
 						username.style.background = '#FFF';
 					}
 					// Verificar estructura
-					if (!username.value.match("^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$")) {
+					if (!isEmail(username.value)) {
 						username.style.background = '#FFFFCC';
 						alert("Correo no válido");
 						error = 1;
@@ -317,32 +317,36 @@
 
 				// Verifica si hay errores
 					if (error != 0) {
+						event.preventDefault();
 						conmensajes.innerHTML = showMessage("warning", "Por favor, verifique sus datos");
 						msgclose.focus();
-						event.preventDefault();
 					} else {
 						if (username.value == user.username && password.value == user.password) {
 							event.preventDefault();
-							if (confirm("Estas seguro? ENTRA BAJO TU PROPIO RIESGO")) {
+							if (confirm("Estás seguro? ENTRA BAJO TU PROPIO RIESGO")) {
 								window.location = 'https://www.youtube.com/watch?v=Lmw4lzjEqD8';
 							} else {
 								conmensajes.innerHTML = showMessage("danger", "such a pussy");
 								msgclose.focus();
 							}
 						} else {
+							event.preventDefault();
 							conmensajes.innerHTML = showMessage("info", "Usuario o Contraseña incorrecta.");
 							username.style.background = '#FFFFCC';
 							password.style.background = '#FFFFCC';
 							msgclose.focus();
-							event.preventDefault();
 						}
 					}
 
 			});
 		}
 
-	function hasNumbers(param) {
+	function hasNumbers(param){
 	  	return param.match(/\d+/g);
+	}
+
+	function isEmail(param){
+		return param.match(/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/g);
 	}
 
 	function todayIs(){
@@ -353,12 +357,9 @@
 
 	function $_GET(param) {
 	    var vars = {};
-	    window.location.href.replace( location.hash, '' ).replace( 
-	        /[?&]+([^=&]+)=?([^&]*)?/gi,
-	        function( m, key, value ) {
-	            vars[key] = value !== undefined ? value : '';
-	        }
-	    );
+	    window.location.href.replace(location.hash, '').replace(/[?&]+([^=&]+)=?([^&]*)?/gi, function(m, key, value) {
+	        vars[key] = value !== undefined ? value : '';
+	    });
 
 	    if ( param ) {
 	        return vars[param] ? vars[param] : null;    
