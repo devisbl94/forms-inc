@@ -63,7 +63,7 @@
 				var error = 0;
 
 				// Validar correo
-					if(username.value == '') {
+					if(username.value == '' || username.value.length > 30) {
 						username.style.background = '#FFFFCC';
 						errorUsername.style.visibility = 'visible';
 						error = 1;
@@ -95,7 +95,7 @@
 					}
 
 				// Validar contraseña
-					if(password.value == '') {
+					if(password.value == '' || password.value.length > 30) {
 						password.style.background = '#FFFFCC';
 						errorPassword.style.visibility = 'visible';
 						error = 1;
@@ -119,7 +119,7 @@
 					}
 
 				// Validar nombre
-					if(nombre.value == '' ) {
+					if(nombre.value == '' || nombre.value.length > 30) {
 						nombre.style.background = '#FFFFCC';
 						errorNombre.style.visibility = 'visible';
 						error = 1;
@@ -135,7 +135,7 @@
 					}
 
 				// Validar fecha de nacimiento
-					if(nacimiento.value == '' ) {
+					if(nacimiento.value == '') {
 						nacimiento.style.background = '#FFFFCC';
 						errorNacimiento.style.visibility = 'visible';
 						error = 1;
@@ -190,7 +190,7 @@
 				var error = 0;
 
 				// Validar connombre
-					if(connombre.value == '' ) {
+					if(connombre.value == '' || connombre.value.length > 30) {
 						connombre.style.background = '#FFFFCC';
 						errorConnombre.style.visibility = 'visible';
 						error = 1;
@@ -206,7 +206,7 @@
 					}
 
 				// Validar correo
-					if(concorreo.value == '') {
+					if(concorreo.value == '' || concorreo.value.length > 30) {
 						concorreo.style.background = '#FFFFCC';
 						errorConcorreo.style.visibility = 'visible';
 						error = 1;
@@ -238,7 +238,7 @@
 					}
 
 				// Validar coninfo
-					if(coninfo.value == '' ) {
+					if(coninfo.value == '') {
 						coninfo.style.background = '#FFFFCC';
 						errorConinfo.style.visibility = 'visible';
 						error = 1;
@@ -247,9 +247,14 @@
 						errorConinfo.style.visibility = 'hidden';
 					}
 					// Verificar longitud y si contiene numeros
-					if (coninfo.value < 3) {
+					if (coninfo.value.length < 3) {
 						coninfo.style.background = '#FFFFCC';
 						alert("Ingrese más de 2 caracteres :(");
+						error = 1;
+					}
+					if (coninfo.value.length > 100) {
+						coninfo.style.background = '#FFFFCC';
+						alert("Demasiada información!");
 						error = 1;
 					}
 
