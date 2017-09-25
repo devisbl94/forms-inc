@@ -82,7 +82,11 @@ body{
 				visibility: hidden;
 				margin: 2px 0 0 0;
 				padding: 0;
-			}					
+			}
+
+	#third{
+		padding-top: 0;
+	}
 
 /* CUSTOM */
 
