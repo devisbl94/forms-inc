@@ -34,6 +34,10 @@ body{
 			   resize: none;
 			}
 
+			.text{
+				margin-bottom: 50px !important;
+			}
+
 			.jumbotron{
 				background-color: transparent !important;
 				padding: 25vh 0 25vh 0;
