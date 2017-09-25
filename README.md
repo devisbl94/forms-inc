@@ -1,2 +1,1 @@
-# forms-inc
-Formularios con validación en javascript
+## Pequeño sitio con forms validados con JavaScript
