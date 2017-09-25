@@ -146,7 +146,7 @@
 					// Verificar si fecha ingresada excede fecha actual
 					if (new Date(nacimiento.value) > new Date(todayIs())) {
 						nacimiento.style.background = '#FFFFCC';
-						alert("Ingrese una fecha valida");
+						alert("Ingrese una fecha válida");
 						error = 1;
 					}
 
