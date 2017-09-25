@@ -1,0 +1,103 @@
+body{
+	padding-top: 50px;
+	font-family: "Century Gothic";
+	background-color: #E4E4E4;
+	font-size: 1.7em;
+}
+
+	header{
+		background-color: #045757;
+		color: #E4E4E4;
+	}
+
+		nav{
+			background-color: #222222 !important;
+		}
+
+	main{
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	  @media screen and (max-width: 425px) {
+	      main{
+	      	padding-top: 20px;
+	      	padding-bottom: 50px;
+	      }
+	  }
+
+		section{
+			padding: 100px 0 100px 0;
+		}
+
+			textarea {
+			   resize: none;
+			}
+
+			.jumbotron{
+				background-color: transparent !important;
+				padding: 25vh 0 25vh 0;
+			}
+
+				.jumbotron img{
+					box-shadow: 10px 10px 5px #033A3A;
+				}
+
+			.box{
+				background-color: #045757;
+				box-shadow: 10px 10px 5px #A1A1A1;
+				color: #E4E4E4;
+				border-radius: 15px;
+				padding: 50px;
+			}
+
+				@media screen and (max-width: 425px) {
+					.box{
+						padding: 20px;
+					}
+				}
+
+			.ver-align{
+				margin-top: 10%;
+			}
+
+				@media screen and (max-width: 991px) {
+					.ver-align{
+						margin-top: 0;
+						margin-bottom: 50px;
+					}
+				}
+
+			.mensajes{
+				color: #FFF;
+				font-style: italic;
+				font-size: 14px;
+				padding: 0;
+			}
+
+			.error {
+				color: #F00;
+				font-style: italic;
+				font-size: 10px;
+				visibility: hidden;
+				margin: 2px 0 0 0;
+				padding: 0;
+			}					
+
+/* CUSTOM */
+
+/*headnavbar{
+	color: #222222;
+}
+
+jumbothing{
+	color: #045757;
+}
+
+allbody{
+	color: #044343;
+}
+
+background{
+	color: #E4E4E4;
+}*/

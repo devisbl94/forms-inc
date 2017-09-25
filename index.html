@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formularios</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<!-- HEADER -->
+		<header>
+
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container-fluid">
+			        <div class="navbar-header">
+			            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			                <span class="sr-only">Toggle navigation</span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			            </button>
+			            <a class="navbar-brand" href="./index.html">Forms Inc.</a>
+			        </div>
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			            <ul class="nav navbar-nav">
+			                <li><a href="./index.html#first">First form</a></li>
+			                <li><a href="./index.html#second">Second Form</a></li>
+			                <li><a href="./topsecret.html">TOP SECRET</a></li>
+			            </ul>
+			        </div>
+			    </div>
+			</nav>
+
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<h1>Forms Inc.</h1>
+							<p>Forms with no meaning at all.</p>
+						</div>
+						<div class="col-sm-6">
+							<img src="./img/principal.gif" class="img-responsive img-rounded">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	
+	<!-- MAIN -->
+		<main>
+			<section id="first">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0 ver-align">
+							<h2>This is a big title. With no meaning.</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+						<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-1 col-lg-offset-0 box">
+							<form id="registro" name="registro" action="?form=true" method="post">
+								<h2>This is a form. Appreciate it.</h2>
+								<h3>Registrate aquí!</h3>
+								<div class="mensajes" id="mensajes"></div>
+								<div class="form-group">
+									<label for="username"><i class="fa fa-at" aria-hidden="true"></i> Correo:</label>
+									<input type="email" class="form-control" id="username" name="username" maxlength="30" required>
+									<span id='errorUsername' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="password"><i class="fa fa-asterisk" aria-hidden="true"></i> Contraseña:</label>
+									<input type="password" class="form-control" id="password" name="password" minlength="4" maxlength="30" required>
+									<span id='errorPassword' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="password2"><i class="fa fa-asterisk" aria-hidden="true"></i> Confirmar contraseña:</label>
+									<input type="password" class="form-control" id="password2" name="password2" maxlength="30" required>
+									<span id='errorPassword2' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="nombre"><i class="fa fa-user-o" aria-hidden="true"></i> Nombre completo:</label>
+									<input type="text" class="form-control" id="nombre" name="nombre" minlength="5" maxlength="30" required>
+									<span id='errorNombre' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="nacimiento"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha de nacimiento:</label>
+									<input type="date" class="form-control" id="nacimiento" name="nacimiento" min="1901-01-01" max="" required>
+									<span id='errorNacimiento' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="genero"><i class="fa fa-venus-mars" aria-hidden="true"></i> Género:</label>
+									<div class="radio">
+									    <label>
+									        <input type="radio" name="genero" id="genero1" value="M"> Masculino
+									    </label>
+									</div>
+									<div class="radio">
+									    <label>
+									        <input type="radio" name="genero" id="genero2" value="F"> Femenino
+									    </label>
+									</div>
+									<div class="radio">
+									    <label>
+									        <input type="radio" name="genero" id="genero3" value="O"> Otro
+									    </label>
+									</div>
+									<span id='errorGenero' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="pais"><i class="fa fa-address-card" aria-hidden="true"></i> País:</label>
+									<select class="form-control" id="pais" name="pais" required>
+										<option value="">--- Seleccione un país ---</option>
+									</select>
+									<span id='errorPais' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group checkbox">
+									<label>
+										<input type="checkbox" id="recibir" name="recibir" value="1">
+										<i class="fa fa-newspaper-o" aria-hidden="true"></i> Suscríbete a nuetro boletín
+									</label>
+								</div>
+								<div class="from-group text-center">
+									<input type="submit" class="btn btn-default">
+									<input type="reset" class="btn btn-default">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="second">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-offset-0 hidden-md hidden-lg ver-align">
+							<h2>This is another big title. What a deal.</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+						<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-0 box">
+							<form id="contactanos" name="contactanos" action="?contactanos=true" method="post">
+								<h2>Another form. You know what to do.</h2>
+								<h3>Contáctanos!</h3>
+								<div class="mensajes" id="conmensajes"></div>
+								<div class="form-group">
+									<label for="connombre"><i class="fa fa-user-o" aria-hidden="true"></i> Nombre:</label>
+									<input type="text" class="form-control" id="connombre" name="connombre" maxlength="30" placeholder="Smitty Werbenjagermanjensen" required>
+									<span id='errorConnombre' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="concorreo"><i class="fa fa-at" aria-hidden="true"></i> Correo electrónico:</label>
+									<input type="email" class="form-control" id="concorreo" name="concorreo" placeholder="example@email.com" maxlength="50" required>
+									<span id='errorConcorreo' class='error'>Campo Requerido</span>
+								</div>
+								<div class="form-group">
+									<label for="coninfo"><i class="fa fa-smile-o" aria-hidden="true"></i> Háblanos sobre tí...</label>
+									<textarea class="form-control" id="coninfo" class="coninfo" rows="5" required></textarea>
+									<span id='errorConinfo' class='error'>Campo Requerido</span>
+								</div>
+								<div class="from-group text-center">
+									<input type="submit" class="btn btn-default">
+									<input type="reset" class="btn btn-default">
+								</div>
+							</form>
+						</div>
+						<div class="hidden-xs hidden-sm col-md-6 col-md-offset-1 ver-align text-right">
+							<h2>This is another big title. What a deal.</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+	<!-- FOOTER -->
+		<footer>
+			
+		</footer>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
