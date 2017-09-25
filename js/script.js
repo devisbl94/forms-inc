@@ -348,6 +348,16 @@
 	    return vars;
 	}
 
+	function boxMessage(alertClass, msg){
+		var div = document.createElement("div");
+		var attr = document.createAttribute("class");
+		var text = document.createTextNode(msg);
+		attr.value = "alert alert-" + alertClass;
+		div.setAttributeNode(attr);
+		div.appendChild(text);
+		return div;
+	}
+
 	function showMessage(type, msg){
 		switch(type) {
 		    case "success":
